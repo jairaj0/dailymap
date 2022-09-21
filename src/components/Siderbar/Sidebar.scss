@@ -1,6 +1,8 @@
 .sidebar{
     min-width: 450px;
     height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
     background: #2d3439;
     padding: 0 3rem;
 

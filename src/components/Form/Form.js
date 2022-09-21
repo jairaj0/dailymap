@@ -1,4 +1,4 @@
-import React, { useRef , useState } from "react";
+import React, { useRef , useState  } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { add, remove } from "../../store/mapSlice";
 import "./Form.scss";
@@ -65,6 +65,7 @@ const Form = () => {
   
     dispatch(add({ type, distance, duration, cadence, marker , message }));
   };
+  
   return (
     <form className="form">
       <div className="flex">

@@ -30,7 +30,7 @@ function LocationMarker() {
     map.locate().on("locationfound", function (e) {
       setPosition(e.latlng);
       map.flyTo(e.latlng, map.getZoom());
-      const radius = e.accuracy - 1000;
+      const radius =500;
       const circle = L.circle(e.latlng, radius);
       circle.addTo(map);
       setBbox(e.bounds.toBBoxString().split(","));
@@ -82,7 +82,7 @@ const MapBox = () => {
     <div className="map">
       <MapContainer
         center={[49.1951, 16.6068]}
-        zoom={13}
+        zoom={15}
         scrollWheelZoom
         whenCreated={setMap}
       >
@@ -91,7 +91,7 @@ const MapBox = () => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <LocationMarker />
-        {data.map((mark,i)=> 
+        {data && data.map((mark,i)=> 
         <Marker key={i} position={mark.marker} icon={markIcon}>
         <Popup>
           <h1>{mark.message}</h1>
